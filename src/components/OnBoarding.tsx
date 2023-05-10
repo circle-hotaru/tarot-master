@@ -32,7 +32,17 @@ const OnBoarding: React.FC<Props> = ({ handleSend }) => {
         onPressEnter={handleKeyDown}
         className="w-full flex-1"
       />
-      <Button type="primary" onClick={() => handleSend(input)}>
+      <Button
+        type="primary"
+        onClick={() => handleSend(input)}
+        style={{
+          alignSelf: 'center',
+          backgroundColor: '#3875f6',
+          color: '#f8fafc',
+          cursor: 'not-allowed',
+        }}
+        disabled={!input}
+      >
         发送
       </Button>
     </div>
