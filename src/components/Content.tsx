@@ -59,7 +59,12 @@ const Content: React.FC = () => {
       {phase === PHASES.ONBOARDING && <OnBoarding handleSend={handleSend} />}
       {phase === PHASES.WAITING && <Waiting setPhase={setPhase} />}
       {response && phase === PHASES.RESULT && (
-        <Result chats={chats} setPhase={setPhase} setChats={setChats} />
+        <Result
+          cards={response}
+          chats={chats}
+          setPhase={setPhase}
+          setChats={setChats}
+        />
       )}
     </div>
   )

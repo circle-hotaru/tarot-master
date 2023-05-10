@@ -5,27 +5,28 @@ import { PHASES } from './Content'
 import { TAROT_MASTER } from '~/constants'
 
 interface Props {
+  cards: string
   chats: any[]
   setPhase: (phase: string) => void
   setChats: (chat: any[]) => void
 }
 
-const Result: React.FC<Props> = ({ chats, setPhase, setChats }) => {
+const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
   const [response, setResponse] = useState('')
   const [loading, setLoading] = useState(false)
   const [btnFlag, setBtnFlag] = useState('explain')
 
-  const cards = chats.find((chat) => chat.role === 'assistant')
-
   const handleGenAIResponse = async () => {
     setLoading(true)
+    const sendChats = chats
     const input_json = {
       role: 'user',
       content: '请结合牌的含义和前面提的问题为我进行解读和提供建议。',
     }
-    chats.push(input_json)
+    sendChats.push(input_json)
+
     try {
-      const data = await requestOpenAI(chats)
+      const data = await requestOpenAI(sendChats)
       if (data) {
         setResponse(data.choices[0].message.content)
         setLoading(false)
@@ -59,7 +60,7 @@ const Result: React.FC<Props> = ({ chats, setPhase, setChats }) => {
 
   return (
     <div className="flex-1  flex flex-col gap-4 justify-center items-start h-full whitespace-pre-wrap">
-      <p>{cards?.content}</p>
+      <p>{cards}</p>
       <p>{response}</p>
       <Button
         type="primary"
