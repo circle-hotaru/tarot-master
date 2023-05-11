@@ -68,7 +68,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
         onClick={handleClick}
         style={{
           alignSelf: 'center',
-          backgroundColor: '#3875f6',
+          backgroundColor: '#5a4186',
           color: '#f8fafc',
           cursor: 'not-allowed',
         }}

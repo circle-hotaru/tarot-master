@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
+import Header from '~/components/Header'
 const Content = dynamic(() => import('~/components/Content'), { ssr: false })
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="bg-gray-900">
       <Head>
         <title>TarotMaster</title>
         <meta
@@ -15,9 +16,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen p-4 md:py-8 flex flex-col items-center bg-gray-900 text-slate-100">
-        <h1 className="text-3xl font-bold text-center">塔罗占卜 🔮</h1>
-
+      <main className="min-h-screen flex flex-col items-center text-slate-100">
+        <Header />
         <Content />
       </main>
     </div>

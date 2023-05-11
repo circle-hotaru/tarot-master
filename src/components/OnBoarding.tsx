@@ -37,7 +37,7 @@ const OnBoarding: React.FC<Props> = ({ handleSend }) => {
         onClick={() => handleSend(input)}
         style={{
           alignSelf: 'center',
-          backgroundColor: '#3875f6',
+          backgroundColor: '#5a4186',
           color: '#f8fafc',
           cursor: 'not-allowed',
         }}

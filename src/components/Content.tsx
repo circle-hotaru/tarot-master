@@ -4,6 +4,7 @@ import { TAROT_MASTER } from '~/constants'
 import OnBoarding from './OnBoarding'
 import Waiting from './Waiting'
 import Result from './Result'
+import styles from './styles.module.css'
 
 export const PHASES = {
   ONBOARDING: 'ONBOARDING',
@@ -55,17 +56,19 @@ const Content: React.FC = () => {
   }, [response])
 
   return (
-    <div className="w-full flex-1 flex flex-col mx-4 mt-2">
-      {phase === PHASES.ONBOARDING && <OnBoarding handleSend={handleSend} />}
-      {phase === PHASES.WAITING && <Waiting setPhase={setPhase} />}
-      {response && phase === PHASES.RESULT && (
-        <Result
-          cards={response}
-          chats={chats}
-          setPhase={setPhase}
-          setChats={setChats}
-        />
-      )}
+    <div className="relative w-full flex-1 flex flex-col pb-6">
+      <div className={`${styles.content} flex-1 flex flex-col px-4`}>
+        {phase === PHASES.ONBOARDING && <OnBoarding handleSend={handleSend} />}
+        {phase === PHASES.WAITING && <Waiting setPhase={setPhase} />}
+        {response && phase === PHASES.RESULT && (
+          <Result
+            cards={response}
+            chats={chats}
+            setPhase={setPhase}
+            setChats={setChats}
+          />
+        )}
+      </div>
     </div>
   )
 }
