@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <div className="bg-gray-900">
       <Head>
-        <title>TarotMaster</title>
+        <title>Tarot Master</title>
         <meta
           name="description"
           content="Tarot Master is a recreation used for divination"
