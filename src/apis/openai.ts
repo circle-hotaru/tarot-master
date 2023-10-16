@@ -1,4 +1,4 @@
-const proxyAPI = 'https://chimeragpt.adventblocks.cc'
+const proxyAPI = 'https://api.naga.ac'
 
 export const requestOpenAI = async (messages: string[]) => {
   const requestOptions = {
@@ -15,7 +15,7 @@ export const requestOpenAI = async (messages: string[]) => {
 
   try {
     const response = await fetch(
-      `${proxyAPI}/api/v1/chat/completions`,
+      `${proxyAPI}/v1/chat/completions`,
       requestOptions
     )
     const data = await response.json()
