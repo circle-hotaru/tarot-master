@@ -56,7 +56,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
   }
 
   let btnText =
-    btnFlag === 'explain' ? (loading ? '解读中 🧙‍♀️' : '解读 🧙‍♀️') : '再来一次 🃏'
+    btnFlag === 'explain' ? (loading ? '解读中 🧙‍♀️' : '解读 🧙‍♀️') : '想要改变命运？🔮'
 
   return (
     <div className="flex-1  flex flex-col gap-4 justify-center items-start h-full whitespace-pre-wrap">
@@ -70,7 +70,6 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
           alignSelf: 'center',
           backgroundColor: '#5a4186',
           color: '#f8fafc',
-          cursor: 'not-allowed',
         }}
         loading={loading}
         disabled={loading}

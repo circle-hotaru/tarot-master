@@ -12,8 +12,7 @@ const Waiting: React.FC<Props> = ({ setPhase }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setText('（洗牌中）')
-      setTimeout(() => setPhase(PHASES.RESULT), 2000)
+      setText('（洗牌中 🔄）')
     }, 2000)
   }, [])
 

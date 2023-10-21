@@ -48,6 +48,7 @@ const Content: React.FC = () => {
 
   useEffect(() => {
     if (!!response) {
+      setPhase(PHASES.RESULT)
       setChats((prevChat) => [
         ...prevChat,
         { role: 'assistant', content: response },
