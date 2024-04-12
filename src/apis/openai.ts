@@ -1,5 +1,5 @@
 const openAiApi = 'https://api.openai.com'
-const openAiApiProxy = process.env.OPENAI_API_PEOXY
+const openAiApiProxy = process.env.OPENAI_API_PROXY
 const apiUrl = openAiApiProxy ?? openAiApi
 
 export const requestOpenAI = async (messages: string[]) => {

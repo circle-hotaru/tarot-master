@@ -39,7 +39,6 @@ const OnBoarding: React.FC<Props> = ({ handleSend }) => {
           alignSelf: 'center',
           backgroundColor: '#5a4186',
           color: '#f8fafc',
-          cursor: 'not-allowed',
         }}
         disabled={!input}
       >
