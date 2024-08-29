@@ -1,6 +1,6 @@
-const openAiApi = 'https://api.openai.com'
-const openAiApiProxy = process.env.OPENAI_API_PROXY
-const apiUrl = openAiApiProxy ?? openAiApi
+const defaultAPI = 'https://api.openai.com'
+const proxyAPI = process.env.OPENAI_API_PROXY
+const apiUrl = proxyAPI ?? defaultAPI
 
 export const requestOpenAI = async (messages: string[]) => {
   const requestOptions = {
@@ -15,14 +15,10 @@ export const requestOpenAI = async (messages: string[]) => {
     }),
   }
 
-  try {
-    const response = await fetch(
-      `${apiUrl}/v1/chat/completions`,
-      requestOptions
-    )
-    const data = await response.json()
-    return data
-  } catch (error) {
-    console.error(error)
+  const response = await fetch(`${apiUrl}/v1/chat/completions`, requestOptions)
+  if (!response.ok) {
+    throw new Error('Failed to get AI response')
   }
+  const data = await response.json()
+  return data.choices[0].message.content
 }

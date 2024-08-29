@@ -26,12 +26,10 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
     sendChats.push(input_json)
 
     try {
-      const data = await requestOpenAI(sendChats)
-      if (data) {
-        setResponse(data.choices[0].message.content)
-        setLoading(false)
-        setBtnFlag('reset')
-      }
+      const aiResponse = await requestOpenAI(sendChats)
+      setResponse(aiResponse)
+      setLoading(false)
+      setBtnFlag('reset')
     } catch (error) {
       console.error(error)
     }
@@ -56,7 +54,11 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
   }
 
   let btnText =
-    btnFlag === 'explain' ? (loading ? '解读中 🧙‍♀️' : '解读 🧙‍♀️') : '想要改变命运？🔮'
+    btnFlag === 'explain'
+      ? loading
+        ? '解读中 🧙‍♀️'
+        : '解读 🧙‍♀️'
+      : '想要改变命运？🔮'
 
   return (
     <div className="flex-1  flex flex-col gap-4 justify-center items-start h-full whitespace-pre-wrap">

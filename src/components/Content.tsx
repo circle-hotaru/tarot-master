@@ -33,10 +33,8 @@ const Content: React.FC = () => {
 
   const handleGenAIResponse = async () => {
     try {
-      const data = await requestOpenAI(chats)
-      if (data) {
-        setResponse(data.choices[0].message.content)
-      }
+      const aiResponse = await requestOpenAI(chats)
+      setResponse(aiResponse)
     } catch (error) {
       console.error(error)
     }
