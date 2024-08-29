@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'next-i18next'
 import { requestOpenAI } from '~/apis/openai'
 import { TAROT_MASTER } from '~/constants'
 import OnBoarding from './OnBoarding'
@@ -13,12 +14,13 @@ export const PHASES = {
 }
 
 const Content: React.FC = () => {
+  const { t } = useTranslation('common')
   const [phase, setPhase] = useState(PHASES.ONBOARDING)
   const [question, setQuestion] = useState('')
   const [chats, setChats] = useState<any[]>([
     {
       role: 'system',
-      content: TAROT_MASTER,
+      content: `${TAROT_MASTER}${t('answer')}`,
     },
   ])
 

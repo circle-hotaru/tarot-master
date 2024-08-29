@@ -1,4 +1,5 @@
 import { useState, KeyboardEventHandler } from 'react'
+import { useTranslation } from 'next-i18next'
 import { Input, Button } from 'antd'
 
 const { TextArea } = Input
@@ -7,6 +8,7 @@ interface Props {
   handleSend: (input: string) => void
 }
 const OnBoarding: React.FC<Props> = ({ handleSend }) => {
+  const { t } = useTranslation('common')
   const [input, setInput] = useState('')
 
   const handleKeyDown: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
@@ -23,7 +25,7 @@ const OnBoarding: React.FC<Props> = ({ handleSend }) => {
   return (
     <div className="flex-1 flex flex-nowrap gap-2 justify-center items-center h-full">
       <TextArea
-        placeholder="我最近的运势怎么样？"
+        placeholder={t('placeholder')}
         autoSize={{ minRows: 1, maxRows: 6 }}
         value={input}
         onChange={(event) => setInput(event.target.value)}
@@ -42,7 +44,7 @@ const OnBoarding: React.FC<Props> = ({ handleSend }) => {
         }}
         disabled={!input}
       >
-        发送
+        {t('send')}
       </Button>
     </div>
   )

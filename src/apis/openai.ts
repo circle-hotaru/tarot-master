@@ -1,5 +1,5 @@
 const defaultAPI = 'https://api.openai.com'
-const proxyAPI = process.env.OPENAI_API_PROXY
+const proxyAPI = process.env.NEXT_PUBLIC_OPENAI_API_PROXY
 const apiUrl = proxyAPI ?? defaultAPI
 
 export const requestOpenAI = async (messages: string[]) => {
@@ -7,7 +7,7 @@ export const requestOpenAI = async (messages: string[]) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
       model: 'gpt-4o-mini',

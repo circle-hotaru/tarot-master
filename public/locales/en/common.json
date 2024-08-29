@@ -1,0 +1,13 @@
+{
+  "title": "AI Tarot",
+  "description": "Embark on a mystical tarot journey with AI Tarot Master, predicting the future and exploring the wisdom of tarot cards.",
+  "placeholder": "How's my recent fortune?",
+  "send": "Send",
+  "waiting": "Please wait a moment while I draw three random cards for you.",
+  "interpret_prompt": "Please interpret the cards and provide advice based on their meanings and the question I asked earlier.",
+  "shuffling": "(Shuffling 🔄)",
+  "interpret": "Interpret 🧙‍♀️",
+  "interpreting": "Interpreting 🧙‍♀️",
+  "retry": "Want to change your fate? 🔮",
+  "answer": "Please answer in English"
+}

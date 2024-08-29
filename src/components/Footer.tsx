@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <p>
         Made with ❤️ by{' '}
         <Link className="font-bold" href="https://github.com/circle-hotaru">
-          circlehotarux
+          incircle
         </Link>{' '}
         on{' '}
         <Link

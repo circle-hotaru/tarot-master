@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'next-i18next'
 import { Button } from 'antd'
 import { requestOpenAI } from '~/apis/openai'
 import { PHASES } from './Content'
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
+  const { t } = useTranslation('common')
   const [response, setResponse] = useState('')
   const [loading, setLoading] = useState(false)
   const [btnFlag, setBtnFlag] = useState('explain')
@@ -21,7 +23,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
     const sendChats = chats
     const input_json = {
       role: 'user',
-      content: '请结合牌的含义和前面提的问题为我进行解读和提供建议。',
+      content: t('interpret_prompt'),
     }
     sendChats.push(input_json)
 
@@ -56,9 +58,9 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
   let btnText =
     btnFlag === 'explain'
       ? loading
-        ? '解读中 🧙‍♀️'
-        : '解读 🧙‍♀️'
-      : '想要改变命运？🔮'
+        ? t('interpreting')
+        : t('interpret')
+      : t('retry')
 
   return (
     <div className="flex-1  flex flex-col gap-4 justify-center items-start h-full whitespace-pre-wrap">

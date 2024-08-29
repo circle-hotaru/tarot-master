@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react'
-import { PHASES } from './Content'
+import { useTranslation } from 'next-i18next'
 
 interface Props {
   setPhase: (phase: string) => void
 }
 
 const Waiting: React.FC<Props> = ({ setPhase }) => {
-  const [text, setText] = useState(
-    '好的，请您稍等片刻，我现在为您抽取三张随机的牌。'
-  )
+  const { t } = useTranslation('common')
+  const [text, setText] = useState(t('waiting'))
 
   useEffect(() => {
     setTimeout(() => {
-      setText('（洗牌中 🔄）')
+      setText(t('shuffling'))
     }, 2000)
   }, [])
 
