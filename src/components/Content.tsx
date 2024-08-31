@@ -6,6 +6,7 @@ import OnBoarding from './OnBoarding'
 import Waiting from './Waiting'
 import Result from './Result'
 import styles from './styles.module.css'
+import { trackEvent } from '~/utils'
 
 export const PHASES = {
   ONBOARDING: 'ONBOARDING',
@@ -27,6 +28,7 @@ const Content: React.FC = () => {
   const [response, setResponse] = useState('')
 
   const handleSend = (input: string) => {
+    trackEvent('user_input', 'click', { input })
     const input_json = { role: 'user', content: input }
     setQuestion(input)
     setChats((prevChat) => [...prevChat, input_json])
