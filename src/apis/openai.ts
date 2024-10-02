@@ -10,7 +10,7 @@ export const requestOpenAI = async (messages: string[]) => {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o-mini',
+      model: 'claude-3-5-sonnet-20240620',
       messages: messages,
     }),
   }
