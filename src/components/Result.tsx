@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import { Button } from 'antd'
-import { requestOpenAI } from '~/apis/openai'
+import { requestChatAI } from '~/apis/chatAI'
 import { PHASES } from './Content'
 import { TAROT_MASTER } from '~/constants'
 
@@ -28,7 +28,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
     sendChats.push(input_json)
 
     try {
-      const aiResponse = await requestOpenAI(sendChats)
+      const aiResponse = await requestChatAI(sendChats)
       setResponse(aiResponse)
       setLoading(false)
       setBtnFlag('reset')

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
-import { requestOpenAI } from '~/apis/openai'
+import { requestChatAI } from '~/apis/chatAI'
 import { TAROT_MASTER } from '~/constants'
 import OnBoarding from './OnBoarding'
 import Waiting from './Waiting'
@@ -37,7 +37,7 @@ const Content: React.FC = () => {
 
   const handleGenAIResponse = async () => {
     try {
-      const aiResponse = await requestOpenAI(chats)
+      const aiResponse = await requestChatAI(chats)
       setResponse(aiResponse)
     } catch (error) {
       console.error(error)
