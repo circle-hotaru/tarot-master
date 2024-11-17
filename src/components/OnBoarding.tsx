@@ -32,7 +32,7 @@ const OnBoarding: React.FC<Props> = ({ handleSend }) => {
         autoFocus
         allowClear
         onPressEnter={handleKeyDown}
-        className="w-full flex-1"
+        className="w-full flex-1 text-base"
       />
       <Button
         type="primary"
