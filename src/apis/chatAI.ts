@@ -10,7 +10,7 @@ export const requestChatAI = async (messages: string[]) => {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_CHAT_API_KEY}`,
     },
     body: JSON.stringify({
-      model: 'claude-3-5-sonnet-20241022',
+      model: 'gpt-4.1-mini',
       messages: messages,
     }),
   }
