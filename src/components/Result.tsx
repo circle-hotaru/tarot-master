@@ -37,7 +37,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
     }
   }
 
-  const handleRest = () => {
+  const handleReset = () => {
     setPhase(PHASES.ONBOARDING)
   }
 
@@ -51,7 +51,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
           content: TAROT_MASTER,
         },
       ])
-      handleRest()
+      handleReset()
     }
   }
 
