@@ -9,6 +9,30 @@
   "interpret": "Interpret 🧙‍♀️",
   "interpreting": "Interpreting 🧙‍♀️",
   "retry": "Want to change your fate? 🔮",
-  "answer": "Please answer in English",
-  "talk_boost_link": "Talk Boost"
+  "answer_in_the_specified_language": "Please answer in English.",
+  "talk_boost_link": "Talk Boost",
+  "cards": {
+    "The Fool": "The Fool",
+    "The Magician": "The Magician",
+    "The High Priestess": "The High Priestess",
+    "The Empress": "The Empress",
+    "The Emperor": "The Emperor",
+    "The Hierophant": "The Hierophant",
+    "The Lovers": "The Lovers",
+    "The Chariot": "The Chariot",
+    "Strength": "Strength",
+    "The Hermit": "The Hermit",
+    "Wheel of Fortune": "Wheel of Fortune",
+    "Justice": "Justice",
+    "The Hanged Man": "The Hanged Man",
+    "Death": "Death",
+    "Temperance": "Temperance",
+    "The Devil": "The Devil",
+    "The Tower": "The Tower",
+    "The Star": "The Star",
+    "The Moon": "The Moon",
+    "The Sun": "The Sun",
+    "Judgement": "Judgement",
+    "The World": "The World"
+  }
 }

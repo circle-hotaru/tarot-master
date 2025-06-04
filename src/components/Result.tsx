@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next'
 import { Button } from 'antd'
 import { requestChatAI } from '~/apis/chatAI'
 import { PHASES } from './Content'
-import { TAROT_MASTER } from '~/constants'
+import { SYSTEM_PROMPT } from '~/constants'
 
 interface Props {
   cards: string
@@ -48,7 +48,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
       setChats([
         {
           role: 'system',
-          content: TAROT_MASTER,
+          content: SYSTEM_PROMPT,
         },
       ])
       handleReset()
@@ -63,7 +63,7 @@ const Result: React.FC<Props> = ({ cards, chats, setPhase, setChats }) => {
       : t('retry')
 
   return (
-    <div className="flex-1  flex flex-col gap-4 justify-center items-start h-full whitespace-pre-wrap">
+    <div className="flex h-full flex-1 flex-col items-start justify-center gap-4 whitespace-pre-wrap">
       <p>{cards}</p>
       <p>{response}</p>
       <Button

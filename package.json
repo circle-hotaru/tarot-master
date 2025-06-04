@@ -32,7 +32,9 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript": "5.0.3"
   },
-  "packageManager": "pnpm@8.6.5+sha512.9b3b5fbe7789978a3d80259f42514a8a8ea05588496c56b3594541728989f6eff2b29c127075313325afc4e79dd5ae78deba28f9a7888e9e554241cea1358502"
+  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
 }
