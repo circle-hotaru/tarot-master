@@ -41,11 +41,8 @@ const Content: React.FC = () => {
       const idx = Math.floor(Math.random() * tarotCards.length)
       const cardKey = tarotCards.splice(idx, 1)[0]
       const card = t(`cards.${cardKey}`)
-      const orientation =
-        Math.random() < 0.5 ? t('upright') : t('reversed')
-      resultCards.push(
-        `${i + 1}. ${card} (${orientation})${i === 2 ? '.' : ';'}`,
-      )
+      const orientation = Math.random() < 0.5 ? t('upright') : t('reversed')
+      resultCards.push(`${i + 1}. ${card} (${orientation})`)
     }
     const result = `${t('drawCardsPrefix')}\n\n${resultCards.join('\n\n')}`
     setResponse(result)
